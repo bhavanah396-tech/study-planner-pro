@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1>Analytics</h1>
+
+<div class="card">
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<script>
+
+new Chart(
+document.getElementById('chart'),
+
+{
+    type:'doughnut',
+
+    data:{
+
+        labels:['Completed','Pending'],
+
+        datasets:[{
+            data:[{{done}}, {{pending}}]
+        }]
+    }
+});
+
+</script>
+
+{% endblock %}

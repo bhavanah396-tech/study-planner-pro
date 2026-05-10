@@ -1,0 +1,132 @@
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:#f4f7fb;
+}
+
+/* LOGIN */
+.center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#111827;
+    position:fixed;
+    padding:20px;
+}
+
+.sidebar h2{
+    color:white;
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:#cbd5e1;
+    text-decoration:none;
+    margin:18px 0;
+    font-size:18px;
+}
+
+.sidebar a:hover{
+    color:white;
+}
+
+/* MAIN */
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+.title{
+    font-size:35px;
+}
+
+/* DASHBOARD */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 12px rgba(0,0,0,0.08);
+}
+
+/* PROGRESS */
+.progress-circle{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    margin:20px auto;
+}
+
+/* TASK */
+.task-box{
+    background:#f9fafb;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+/* BUTTON */
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e40af;
+}
+
+/* DONE */
+.done-badge{
+    background:#10b981;
+    color:white;
+    padding:8px 12px;
+    border-radius:10px;
+}
+
+/* TIMER */
+#timer{
+    font-size:50px;
+    margin:25px 0;
+    font-weight:bold;
+}

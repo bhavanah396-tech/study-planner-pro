@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main-content">
+
+<h1 class="title">
+Smart Study Optimizer
+</h1>
+
+<div class="card">
+
+<form method="POST">
+
+<label>
+Available Study Hours
+</label>
+
+<br><br>
+
+<input
+type="number"
+name="hours"
+placeholder="Enter available hours"
+required
+class="input-box">
+
+<br><br>
+
+<button class="btn">
+Generate Optimized Plan
+</button>
+
+</form>
+
+</div>
+
+<br>
+
+{% if result %}
+
+<div class="card">
+
+<h2>
+Best Task Combination Using Dynamic Programming
+</h2>
+
+<br>
+
+{% for r in result %}
+
+<div class="task-card">
+
+<h3>
+{{r[0]}}
+</h3>
+
+<p>
+⏰ Duration:
+{{r[1]}} Hours
+</p>
+
+<p>
+⭐ Priority:
+{{r[2]}}
+</p>
+
+</div>
+
+<br>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

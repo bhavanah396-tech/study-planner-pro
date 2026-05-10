@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="title">Admin Dashboard</h1>
+
+<!-- USERS -->
+
+<div class="card">
+
+<h2>Registered Users</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Username</th>
+<th>Email</th>
+<th>Action</th>
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{user[0]}}</td>
+<td>{{user[1]}}</td>
+<td>{{user[2]}}</td>
+
+<td>
+
+<a href="/delete_user/{{user[0]}}">
+
+<button>
+Delete
+</button>
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<br>
+
+<!-- TASKS -->
+
+<div class="card">
+
+<h2>All Tasks</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>User</th>
+<th>Task</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+
+<td>{{task[0]}}</td>
+<td>{{task[1]}}</td>
+<td>{{task[2]}}</td>
+<td>{{task[3]}}</td>
+
+<td>
+
+<a href="/delete_task/{{task[0]}}">
+
+<button>
+Delete
+</button>
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<br>
+
+<!-- LEADERBOARD -->
+
+<div class="card">
+
+<h2>Leaderboard</h2>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>User</th>
+<th>Completed Tasks</th>
+</tr>
+
+{% for user in leaderboard %}
+
+<tr>
+
+<td>{{loop.index}}</td>
+<td>{{user[0]}}</td>
+<td>{{user[1]}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

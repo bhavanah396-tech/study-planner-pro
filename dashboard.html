@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="title">
+Welcome {{username}}
+</h1>
+
+<div class="dashboard-grid">
+
+    <!-- PROGRESS -->
+    <div class="card">
+
+        <h2>Study Progress</h2>
+
+        <div class="progress-circle">
+
+            {{progress}}%
+
+        </div>
+
+        <p>
+        {{done}} of {{total}} tasks completed
+        </p>
+
+    </div>
+
+    <!-- TASKS -->
+    <div class="card">
+
+        <h2>Recent Tasks</h2>
+
+        {% if recent %}
+
+            {% for task in recent %}
+
+            <div class="task-box">
+
+                <h3>{{task[1]}}</h3>
+
+                <p>{{task[2]}}</p>
+
+                <small>
+                {{task[3]}} | {{task[4]}}
+                </small>
+
+                <br><br>
+
+                {% if task[5] == "pending" %}
+
+                <a href="/complete/{{task[0]}}">
+
+                    <button>
+                    Mark Complete
+                    </button>
+
+                </a>
+
+                {% else %}
+
+                <span class="done-badge">
+                Completed
+                </span>
+
+                {% endif %}
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+        <p>No tasks added yet.</p>
+
+        {% endif %}
+
+    </div>
+
+    <!-- POMODORO -->
+    <div class="card">
+
+        <h2>Pomodoro Timer</h2>
+
+        <div id="timer">
+
+            25:00
+
+        </div>
+
+        <button onclick="startPomodoro()">
+
+            Start Timer
+
+        </button>
+
+    </div>
+
+</div>
+
+{% endblock %}

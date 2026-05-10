@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main-content">
+
+<h1 class="title">
+Study Planner
+</h1>
+
+<div class="card">
+
+<form method="POST">
+
+<label>Task Title</label>
+
+<br><br>
+
+<input
+type="text"
+name="title"
+placeholder="Enter task title"
+required
+class="input-box">
+
+<br><br>
+
+<label>Description</label>
+
+<br><br>
+
+<textarea
+name="description"
+placeholder="Enter task description"
+required
+class="input-box"></textarea>
+
+<br><br>
+
+<label>Date</label>
+
+<br><br>
+
+<input
+type="date"
+name="date"
+required
+class="input-box">
+
+<br><br>
+
+<label>Time</label>
+
+<br><br>
+
+<input
+type="time"
+name="time"
+required
+class="input-box">
+
+<br><br>
+
+<label>Priority</label>
+
+<br><br>
+
+<select
+name="priority"
+class="input-box"
+required>
+
+<option value="1">Low</option>
+<option value="5">Medium</option>
+<option value="10">High</option>
+
+</select>
+
+<br><br>
+
+<label>Duration (Hours)</label>
+
+<br><br>
+
+<input
+type="number"
+name="duration"
+placeholder="Study Duration"
+required
+class="input-box">
+
+<br><br>
+
+<button class="btn">
+Add Task
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}
